@@ -16,4 +16,8 @@ controller_roles:
       - "Organization1"
     team: "ldap-org01-devs"
     role: execution_environment_admin
+  - organizations:
+      - "Organization1"
+    team: "ldap-org01-devs"
+    role: project_admin
 ...
