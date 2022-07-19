@@ -4,7 +4,7 @@ controller_templates:
     description: "Template to  test Container Groups"
     organization: "{{ orgs }}"
     project: "{{ orgs }} Demo Push"
-    inventory: "{{ orgs }} Localhost"
+    inventory: " Global Localhos"
     playbook: "readonly-playbooks.yml"
     job_type: run
     concurrent_jobs_enabled: true
