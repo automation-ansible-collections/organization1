@@ -11,7 +11,7 @@ controller_templates:
     credentials:
       - "{{ orgs }} {{ env }} aap_vault_credentials"
     execution_environment: "Default execution environment"
-#
+
 #
 #  - name: "{{ orgs }} JT_Container_Group TEST DEMO - Second Push"
 #    description: "Template to  test Container Groups"
