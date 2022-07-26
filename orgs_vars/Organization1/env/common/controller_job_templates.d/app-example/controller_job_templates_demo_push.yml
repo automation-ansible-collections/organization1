@@ -1,17 +1,17 @@
 ---
-controller_templates: []
-#  - name: "{{ orgs }} JT_Container_Group TEST DEMO First Push"
-#    description: "Template to  test Container Groups"
-#    organization: "{{ orgs }}"
-#    project: "{{ orgs }} Demo Push"
-#    inventory: "Global Localhost"
-#    playbook: "readonly-playbooks.yml"
-#    job_type: run
-#    concurrent_jobs_enabled: true
-#    credentials:
-#      - "{{ orgs }} {{ env }} aap_vault_credentials"
-#    execution_environment: "Default execution environment"
-#
+controller_templates: 
+  - name: "{{ orgs }} JT_Container_Group TEST DEMO First Push"
+    description: "Template to  test Container Groups"
+    organization: "{{ orgs }}"
+    project: "{{ orgs }} Demo Push"
+    inventory: "Global Localhost"
+    playbook: "readonly-playbooks.yml"
+    job_type: run
+    concurrent_jobs_enabled: true
+    credentials:
+      - "{{ orgs }} {{ env }} aap_vault_credentials"
+    execution_environment: "Default execution environment"
+
 #  - name: "{{ orgs }} JT_Container_Group TEST DEMO - Second Push"
 #    description: "Template to  test Container Groups"
 #    organization: "{{ orgs }}"
