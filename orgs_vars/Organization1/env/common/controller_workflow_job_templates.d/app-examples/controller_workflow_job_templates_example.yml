@@ -1,6 +1,7 @@
 ---
 controller_workflows:
   - name: "{{ orgs }} Workflow_Gather_Facts"
+    state: present
     description: "workflow for GatherFacts on AAP"
     survey_enabled: false
     ask_variables_on_launch: true
@@ -8,4 +9,24 @@ controller_workflows:
     allow_simultaneous: true
     scm_branch: "{{ env }}"
     organization: "{{ orgs }}"
+    simplified_workflow_nodes:
+      - identifier: JT_GATHER_FACTS_ORG1
+        workflow_job_template: "{{ orgs }} Workflow_Gather_Facts"
+        unified_job_template: "{{ orgs }} JT_Gather_Facts"
+        job_type: run
+        organization: "{{ orgs }}"
+        workflow: "{{ orgs }} Workflow_Gather_Facts"
+
+      - identifier: PROJECT_SYNC_PLAYBOOKS_ORG1
+        workflow_job_template: "{{ orgs }} Workflow_Gather_Facts"
+        unified_job_template: "{{ orgs }} Playbooks"
+        organization: "{{ orgs }}"
+        workflow: "{{ orgs }} Workflow_Gather_Facts"
+        success_nodes:
+          - JT_GATHER_FACTS_ORG1    
+    notification_templates_started: []
+    notification_templates_success: []
+    notification_templates_error: []
+    notification_templates_approvals: []
+    survey_spec: {}            
 ...
